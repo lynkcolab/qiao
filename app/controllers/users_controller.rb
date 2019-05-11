@@ -4,6 +4,9 @@ class UsersController < ApplicationController
     @departments = Department.all
   end
 
+  def show
+  end
+
   def create
     # @department = Department.find(user_params[:department])
     # user_params[:department] = @department
