@@ -8,6 +8,8 @@ class LunchesController < ApplicationController
     if (matches.count == 1)
       @users = User.joins(:matches).where("(matches.id = ?) AND (users.id != ?)", matches[0].id, current_user.id)
     end
+
+    @random_users = User.all.take(5)
   end
 
   def create

@@ -12,7 +12,7 @@
               <div class="content">
                 <p>with
                 <% @users.each_with_index do |user, i| %>
-                  <span class="name"><%= user.name %></span>
+                  <span class="name"><%= link_to user.name , user_path(user.id)%></span>
                   <% if i != @users.count - 1 %>
                     and 
                   <% end %>
@@ -56,19 +56,21 @@
     <div class="lunch">
         <div class="content">
             <h3 class="date">3 may</h3>
-            <p>with <span class="name">Emma Westman</span> and <span class="name">Shan Huang</span></p>
+            <p>with <span class="name"><%= link_to @random_users[0].name, user_path(@random_users[0].id)%></span> and 
+            <span class="name"><%= link_to @random_users[1].name, user_path(@random_users[1].id)%></span></p>
         </div>
     </div>
     <div class="lunch">
         <div class="content">
             <h3 class="date">28 april</h3>
-            <p>with <span class="name">William Andersson</span></p>
+            <p>with <span class="name"><%= link_to @random_users[2].name, user_path(@random_users[2].id)%></span></p>
         </div>
     </div>
        <div class="lunch">
         <div class="content">
             <h3 class="date">9 april</h3>
-            <p>with <span class="name">Adam Broadbent</span> and <span class="name">Shan Huang</span></p>
+            <p>with <span class="name"><%= link_to @random_users[3].name, user_path(@random_users[3].id)%></span> 
+            and <span class="name"><%= link_to @random_users[4].name, user_path(@random_users[4].id)%></span></p>
         </div>
     </div>
 </div>
