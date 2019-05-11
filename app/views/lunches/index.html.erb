@@ -3,12 +3,19 @@
     <h1>Join Lunch</h1>
     <p>Sign up to join the next lunch round</p>
 </div>
-
     <div class="event">
         <%= Date.current.next_week(:thursday) %> at 12:00
         <div class="button pink">
         <%= link_to "Join", lunches_path, method: :post %>
         </div>
+        <% if @users %>
+          <div class="content">
+            <p>with </p>
+            <% @users.each do |user| %>
+              <span class="name"><%= user.name %></span>
+            <% end %>
+          </div>
+        <% end %>
     </div>
 </div>
 
