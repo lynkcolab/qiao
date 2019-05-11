@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+Welcome back current_user.name
+<% else %>
+<h1>Lunch with colleagues</h1>
+<p>Connect with random people at work.</p>
+<p>By having lunch.</p>
+<%= link_to "Sign up", 'users/sign_up' %>
+<br />
+<%= link_to "I have an account", 'users/sign_in' %>
+<% end %>
