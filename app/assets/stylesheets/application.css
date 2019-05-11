@@ -15,15 +15,21 @@
  */
 
  body {
-    font-family: 'Karla', serif;
+    font-family: 'Karla', sans-serif;
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-color: #eee; 
+   }
+
+   .content-container {
+       padding: 15px; 
+       background-color: #fff;
    }
 
    .button {
-       width: 90%;
-       border: black solid 2px;
+       width: 100%;
+       border: black solid 3px;
        max-width: 350px;
        display: flex;
        justify-content: center;
@@ -31,27 +37,54 @@
    }
 
    .button.pink {
-       background-color: pink;
+       background-color: #F898A0;
    }
 
 
    .button a {
-    margin: 15px 0;
+    padding: 15px 0;
+    margin: 0; 
     text-transform: uppercase;
     text-decoration: none;
     color: black;
+    font-size: 22px; 
+    font-weight: bold; 
+   }
+
+   .field {
+       margin-bottom: 15px; 
+   }
+
+   .field label {
+       display: none; 
+   }
+
+   .actions input { 
+    width: 100%; 
+    padding: 15px 0;
+    margin: 0; 
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    font-size: 22px; 
+    font-weight: bold;
+    background-color: #F898A0;
+    border: 3px solid #000; 
    }
 
    input {
-    width: 90%;
-    border: black solid 2px;
+    width: calc(100% - 30px);
+    border: black solid 0px;
     max-width: 350px;
-    background-color: light-grey;
+    background-color: #F2F2F2;
+    font-size: 17px; 
+    padding: 15px; 
+    font-family: "Karla"; 
    }
 
    .left {
        align-items: flex-start;
-       width: 90%;
+       width: 100%;
        max-width: 350px;
    }
 
@@ -62,3 +95,15 @@
     justify-content: center;
     padding: 20px 0;
    }
+
+   .section-heading h1 {
+    text-transform: uppercase; 
+    font-size: 36px; 
+    padding: 0; 
+    margin: 20px 0 0px; 
+   }
+   .section-heading p {
+    font-size: 17px;  
+    padding: 0; 
+    margin: 0; 
+}

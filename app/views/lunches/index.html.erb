@@ -1,4 +1,39 @@
-<h1>Join Lunch</h1>
-<p>Sign up to join the next lunch round</p>
-<%= Date.current.next_week(:thursday) %> at 12:00
-<%= link_to "Join", lunches_path, method: :post %>
+<div class="left">
+<div class="section-heading">
+    <h1>Join Lunch</h1>
+    <p>Sign up to join the next lunch round</p>
+</div>
+
+    <div class="event">
+        <%= Date.current.next_week(:thursday) %> at 12:00
+        <div class="button pink">
+        <%= link_to "Join", lunches_path, method: :post %>
+        </div>
+    </div>
+</div>
+
+<div class="section-heading">
+    <h1>Previously</h1>
+    <p>See which lunches you have been on before</p>
+</div>
+
+<div class="prev-container">
+    <div class="lunch">
+        <div class="content">
+            <h3 class="date">3 may</h3>
+            <p>with <span class="name">Emma Westman</span> and <span class="name">Shan Huang</span></p>
+        </div>
+    </div>
+    <div class="lunch">
+        <div class="content">
+            <h3 class="date">3 may</h3>
+            <p>with <span class="name">William Andersson</span></p>
+        </div>
+    </div>
+       <div class="lunch">
+        <div class="content">
+            <h3 class="date">3 may</h3>
+            <p>with <span class="name">Adam Broadbent</span> and <span class="name">Shan Huang</span></p>
+        </div>
+    </div>
+</div>
