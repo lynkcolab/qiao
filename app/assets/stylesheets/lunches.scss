@@ -7,7 +7,34 @@
     height: 200px;
     width: 100%;
     max-width: 350px;
+    margin: 15px 0 60px; 
+    position: relative; 
+
+    .event-content {
+        margin: 15px; 
+
+        h2 {
+            margin: 5px 0; 
+            font-size: 28px; 
+        }
+
+        h3 {
+            font-weight: normal; 
+            color: #F898A0; 
+            margin: 0; 
+            text-transform: uppercase; 
+            font-size: 19px; 
+        }
+
+        .button {
+            position: absolute;
+            bottom: -50px; 
+            right: -3px;
+            max-width: 200px;
+        }
+    }
 }
+
 
 .prev-container {
     width: 100%;

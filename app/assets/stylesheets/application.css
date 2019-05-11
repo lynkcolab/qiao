@@ -23,6 +23,7 @@
    }
 
    .content-container {
+       min-height: 900px; 
        padding: 15px; 
        background-color: #fff;
    }
