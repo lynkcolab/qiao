@@ -1,20 +1,43 @@
-<div class="left">
+
 <div class="section-heading">
     <h1>Join Lunch</h1>
     <p>Sign up to join the next lunch round</p>
 </div>
 
     <div class="event">
-        <%= Date.current.next_week(:thursday) %> at 12:00
-        <div class="button pink">
-        <%= link_to "Join", lunches_path, method: :post %>
+        <div class="event-content">
+            <h3>May 2019</h3>
+            <h2><%= Date.current.next_week(:thursday) %></h2>
+            <h2>at 12:00</h2>
+            <div class="button pink">
+                <%= link_to "Join", lunches_path, method: :post %>
+            </div>
         </div>
     </div>
-</div>
+
+    <div class="event">
+        <div class="event-content">
+            <h3>May 2019</h3>
+            <h2><%= Date.current.next_week(:thursday) %></h2>
+            <h2>at 12:00</h2>
+            <div class="button grey">
+                <%= link_to "Cancel", lunches_path, method: :post %>
+            </div>
+        </div>
+    </div>
+
+    <div class="event-conversations">
+        <div class="event-content">
+            <h2>Need something to talk about?</h2>
+            <div class="button white">
+                <a>Conversation menu</a>
+            </div>
+        </div>
+    </div>
 
 <div class="section-heading">
     <h1>Previously</h1>
-    <p>See which lunches you have been on before</p>
+    <p>See the lunches you have been on before</p>
 </div>
 
 <div class="prev-container">
