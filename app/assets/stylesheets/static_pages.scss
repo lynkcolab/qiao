@@ -1,0 +1,37 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.prev-container.conversations {
+    width: 100%;
+    max-width: 350px;
+    .conversation-item {
+      border: black solid 3px;
+      margin: 15px 0;
+  
+      .content {
+        padding: 20px;
+        h3 {
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 28px;
+          margin: 0;
+          color: #f898a0;
+        }
+        h4 {
+            font-weight: normal;
+            color: #000;
+            margin: 0 0 5px;
+            font-size: 19px;
+        }
+        p {
+          font-size: 19px;
+          line-height: 1.5;
+          margin: 15px 0 0;
+          .name {
+            color: #f898a0;
+          }
+        }
+      }
+    }
+  }
