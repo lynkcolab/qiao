@@ -6,3 +6,39 @@
     width: 90%;
     max-width: 350px;
 }
+
+
+.profile-box {
+    border: black solid 3px;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;    
+    flex-direction: column;
+
+    .face{
+        max-width: 150px;
+        padding: 20px 0;
+    }
+
+    span {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        
+        &:last-of-type {
+            padding-bottom: 20px;
+        }
+
+        &.name {
+            text-transform: uppercase;
+            font-size: 22px;
+        }
+
+        &.department {
+            color: #F898A0;
+            font-size: 19px;
+        }
+    }
+}
+
+
