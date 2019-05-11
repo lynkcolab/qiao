@@ -1,0 +1,4 @@
+<h1>Join Lunch</h1>
+<p>Sign up to join the next lunch round</p>
+<%= Date.current.next_week(:thursday) %> at 12:00
+<%= link_to "Join", lunches_path, method: :post %>
