@@ -1,8 +1,17 @@
 <h1>Welcome</h1>
 
 <%= form_for @user, url: { action: "create" } do |f| %>
-    <%= f.text_field :name %>
-    <%= f.text_field :email %>
-    <%= f.text_field :url %>
-    <%= submit_tag 'Create' %>
-  <% end %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br />
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <br />
+  <%= f.label :department %>
+  <%= f.collection_select :department_id, @departments, :id, :name %>
+  <br />
+  <%= f.label "LinkedIn URL (optional)" %>
+  <%= f.text_field :url %>
+  <br />
+  <%= submit_tag 'Create' %>
+<% end %>

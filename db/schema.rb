@@ -10,10 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_11_091310) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 2019_05_11_105208) do
 
   create_table "departments", force: :cascade do |t|
     t.string "name"
@@ -27,6 +24,8 @@ ActiveRecord::Schema.define(version: 2019_05_11_091310) do
     t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "department_id"
+    t.index ["department_id"], name: "index_users_on_department_id"
   end
 
 end

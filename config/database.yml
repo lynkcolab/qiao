@@ -22,7 +22,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  <<: *default
+  adapter: sqlite3
   database: qiao_development
 
   # The specified database role being used to connect to postgres.
