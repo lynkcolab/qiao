@@ -19,6 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 1.day, :at => ‘02:30 pm’ do
-  rake emials:next_lunch_promo
+every 1.day, :at => ‘02:40 pm’ do
+  rake emails:next_lunch_promo
 end
