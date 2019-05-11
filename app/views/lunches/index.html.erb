@@ -3,25 +3,27 @@
     <h1>Join Lunch</h1>
     <p>Sign up to join the next lunch round</p>
 </div>
-  <% if @users %>
+  <% if @lunch %>
     <div class="event">
         <div class="event-content">
             <h3>May 2019</h3>
             <h2><%= Date.current.next_week(:thursday) %></h2>
             <h2>at 12:00</h2>
               <div class="content">
-                <p>with
-                <% @users.each_with_index do |user, i| %>
-                  <span class="name"><%= user.name %></span>
-                  <% if i != @users.count - 1 %>
-                    and 
+                <% if @users %>
+                  <p>with
+                  <% @users.each_with_index do |user, i| %>
+                    <span class="name"><%= user.name %></span>
+                    <% if i != @users.count - 1 %>
+                      and 
+                    <% end %>
                   <% end %>
                 <% end %>
                 </p>
               </div>
 
             <div class="button grey">
-                <%= link_to "Cancel", lunches_path, method: :post %>
+                <%= link_to "Cancel", '/lunches/cancel_next_lunch' %>
             </div>
         </div>
     </div>
