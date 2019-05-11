@@ -1,0 +1,19 @@
+<div class="profile-box top">
+    <img src="<%= image_path('face.png') %>" class="face"/>
+    <span class="name">
+        <%= current_user.name %>
+    </span>
+    <span class="department">
+        <%= current_user.department.name %>
+    </span>
+</div>
+
+<div class="profile-box">
+    <span>
+        <%= current_user.email %>
+    </span>
+</div>
+
+<div class="button">
+   <%= link_to "go to linkedin", "https://www.linkedin.com/", :target => "_blank" %>
+</div>
