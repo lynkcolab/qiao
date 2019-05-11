@@ -1,0 +1,8 @@
+<h1>Welcome</h1>
+
+<%= form_for @user, url: { action: "create" } do |f| %>
+    <%= f.text_field :name %>
+    <%= f.text_field :email %>
+    <%= f.text_field :url %>
+    <%= submit_tag 'Create' %>
+  <% end %>
