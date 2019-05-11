@@ -3,6 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .new_user {
-    width: 90%;
-    max-width: 350px;
+    width: 100%;
+}
+
+.alternative {
+    h4 {
+        margin: 40px 0 20px; 
+        font-weight: normal; 
+        text-align: center; 
+        font-size: 18px; 
+    }
 }
