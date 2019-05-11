@@ -3,9 +3,16 @@ class LunchesController < ApplicationController
 
   def index
     next_lunch_start = Date.current.next_week(:thursday) + 12.hours
-    # user = User.includes(:matches => :lunches).find(current_user.id)
+
+    lunches = Lunch.joins(:users).where("(users.id = ?) AND (lunches.start = ?)", current_user.id, next_lunch_start)
+
+    if lunches.count == 1
+      @lunch = lunches[0]
+    end
+
     matches = Match.joins(:users,:lunches).where("(users.id = ?) AND (lunches.start = ?)", current_user.id, next_lunch_start)
-    if (matches.count == 1)
+
+    if matches.count == 1
       @users = User.joins(:matches).where("(matches.id = ?) AND (users.id != ?)", matches[0].id, current_user.id)
     end
 
@@ -19,6 +26,17 @@ class LunchesController < ApplicationController
     @lunch.save
 
     redirect_to lunches_path
+  end
+
+  def cancel_next_lunch
+    next_lunch_start = Date.current.next_week(:thursday) + 12.hours
+    @lunch = Lunch.includes(:users).find_or_create_by(start: next_lunch_start)
+    puts @lunch.users.count
+    @lunch.users.delete(current_user)
+    puts @lunch.users.count
+    @lunch.save
+
+    redirect_to '/lunches/match'
   end
 
   def match
