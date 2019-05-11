@@ -31,7 +31,7 @@
     <div class="event">
         <div class="event-content">
             <h3>May 2019</h3>
-            <h2><%= Date.current.next_week(:thursday) %></h2>
+            <h2><%= @next_lunch_start.strftime('%A %d') %></h2>
             <h2>at 12:00</h2>
             <div class="button pink">
                 <%= link_to "Join", lunches_path, method: :post %>
