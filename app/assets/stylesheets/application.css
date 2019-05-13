@@ -21,7 +21,7 @@
    }
 
 header {
-    height: 70px;
+    height: 60px;
     border-bottom: 3px solid #000;
     background-color: #fff;
 }
@@ -29,8 +29,17 @@ header {
 header .logo {
     display: flex;
     margin: 0 auto;
-    text-align: center;
     line-height: 1;
+    text-align: center; 
+ }
+ header .logo a {
+    font-size: 26px; 
+    text-decoration: none; 
+    color: #000; 
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 3px solid #F898A0; 
+    line-height: .8;  
  }
 
    .content-container {
