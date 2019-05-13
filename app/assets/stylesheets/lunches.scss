@@ -83,8 +83,9 @@
         font-size: 19px;
         line-height: 1.5;
         margin: 15px 0 0;
-        .name {
+        .name, a {
           color: #f898a0;
+          text-decoration: none;
         }
       }
     }
@@ -96,8 +97,9 @@
     font-size: 19px;
     line-height: 1.5;
     margin: 15px 0 0;
-    .name {
+    .name, a{
       color: #f898a0;
+      text-decoration: none;
     }
   }
 }

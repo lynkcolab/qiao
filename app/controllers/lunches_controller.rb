@@ -1,22 +1,27 @@
+require 'date'
+
 class LunchesController < ApplicationController
   before_action :authenticate_user!
 
   def index
     @user = User.find_by_id(current_user)
-    
-    next_lunch_start = Date.current.next_week(:thursday) + 12.hours
 
-    lunches = Lunch.joins(:users).where("(users.id = ?) AND (lunches.start = ?)", current_user.id, next_lunch_start)
+    @next_lunch_start = Date.current.next_week(:thursday) + 12.hours
+
+
+    lunches = Lunch.joins(:users).where("(users.id = ?) AND (lunches.start = ?)", current_user.id, @next_lunch_start)
 
     if lunches.count == 1
       @lunch = lunches[0]
     end
 
-    matches = Match.joins(:users,:lunches).where("(users.id = ?) AND (lunches.start = ?)", current_user.id, next_lunch_start)
+    matches = Match.joins(:users,:lunches).where("(users.id = ?) AND (lunches.start = ?)", current_user.id, @next_lunch_start)
 
     if matches.count == 1
       @users = User.joins(:matches).where("(matches.id = ?) AND (users.id != ?)", matches[0].id, current_user.id)
     end
+
+    @random_users = User.all.take(5)
   end
 
   def create
