@@ -5,8 +5,6 @@
 .event {
   border: black solid 3px;
   height: 220px;
-  width: 100%;
-  max-width: 350px;
   margin: 15px 0 60px;
   position: relative;
 
@@ -20,50 +18,55 @@
 
     h3 {
       font-weight: normal;
-      color: #f898a0;
       margin: 0;
       text-transform: uppercase;
       font-size: 19px;
+      color: #f898a0;
     }
 
     .button {
       position: absolute;
       bottom: -50px;
       right: -3px;
-      max-width: 180px;
+      width: 180px;
     }
   }
 }
 
 .event-conversations {
   border: black solid 3px;
-  height: 160px;
-  width: 100%;
-  max-width: 350px;
   margin: 15px 0 60px;
   position: relative;
-  background-color: #f898a0;
 
   .event-content {
     margin: 20px;
+    padding: 0 0 20px;
 
     h2 {
       margin: 5px 0;
       font-size: 28px;
     }
 
+    h3 {
+        font-weight: normal;
+        margin: 0;
+        text-transform: uppercase;
+        font-size: 19px;
+        color: #f898a0;
+      }
+
     .button {
       position: absolute;
       bottom: -50px;
       right: -3px;
-      max-width: 250px;
+      width: 180px;
     }
   }
 }
 
 .prev-container {
-  width: 100%;
-  max-width: 350px;
+
+
   .lunch {
     border: black solid 3px;
     margin: 15px 0;

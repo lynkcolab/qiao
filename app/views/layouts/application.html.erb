@@ -12,8 +12,8 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= render "global_partials/header" %>
+    <%= render "global_partials/notice" %>
     <div class="content-container">
       <%= yield %>
     </div>

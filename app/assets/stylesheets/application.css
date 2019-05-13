@@ -16,25 +16,41 @@
 
  body {
     font-family: 'Karla', sans-serif;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    margin: 0; 
     background-color: #eee; 
    }
 
+header {
+    height: 70px;
+    border-bottom: 3px solid #000;
+    background-color: #fff;
+}
+
+header .logo {
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1;
+ }
+
    .content-container {
+       max-width: 375px;
        min-height: 900px; 
        padding: 15px; 
+       margin: 0 auto; 
        background-color: #fff;
+       display: block; 
+   }
+
+   p.notice {
+       margin: 0; 
    }
 
    .button {
-       width: 100%;
        border: black solid 3px;
-       max-width: 350px;
        display: flex;
        justify-content: center;
-       margin-bottom: 20px;
+       margin-bottom: 15px;
        font-weight: bold; 
    }
 
@@ -47,7 +63,9 @@
     .button.white {
         background-color: #fff;
     }
-
+    .button.black {
+        background-color: #000;
+    }
 
    .button a {
     padding: 15px 0;
@@ -58,6 +76,10 @@
     font-size: 22px; 
     font-weight: bold; 
    }
+   .button.black a {
+    color: white; 
+    }
+
 
    .field {
        margin-bottom: 15px; 
@@ -88,7 +110,6 @@
    input {
     width: calc(100% - 30px);
     border: black solid 0px;
-    max-width: 350px;
     background-color: #F2F2F2;
     font-size: 17px; 
     padding: 15px; 
@@ -112,10 +133,12 @@
 
    .section-heading h1 {
     text-transform: uppercase; 
-    font-size: 36px; 
+    font-size: 30px; 
     padding: 0; 
     margin: 20px 0 0px; 
+    line-height: 1;
    }
+
    .section-heading p {
     font-size: 17px;  
     padding: 0; 
@@ -125,4 +148,13 @@
 
     .section-heading.top-margin{
         margin: 60px 0 30px;  
+    }
+
+
+
+    @media only screen and (max-width: 375px) {
+        .content-container {
+            max-width: 400px;
+            min-height: 900px; 
+        }
     }

@@ -2,6 +2,8 @@ class LunchesController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @user = User.find_by_id(current_user)
+    
     next_lunch_start = Date.current.next_week(:thursday) + 12.hours
 
     lunches = Lunch.joins(:users).where("(users.id = ?) AND (lunches.start = ?)", current_user.id, next_lunch_start)

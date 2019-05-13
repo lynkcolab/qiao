@@ -1,3 +1,16 @@
+<% if user_signed_in? %>
+    <div class="user-feed-card">
+        <div class="card-content">
+        <span>
+            <img src="<%= image_path('face.png') %>" class="face"/>
+        </span>
+        <span>
+            <h3>Welcome</h3>
+            <h2><%= link_to @user.name, @user %></h2>
+        </span>
+        </div>
+    </div>
+<% end %>
 
 <div class="section-heading">
     <h1>Join Lunch</h1>
@@ -22,7 +35,7 @@
                 </p>
               </div>
 
-            <div class="button grey">
+            <div class="button black">
                 <%= link_to "Cancel", '/lunches/cancel_next_lunch' %>
             </div>
         </div>
@@ -40,11 +53,17 @@
     </div>
   <% end %>
 
+<div class="section-heading">
+    <h1>Conversations</h1>
+    <p>Avoid an akward silence</p>
+</div>
+
     <div class="event-conversations">
         <div class="event-content">
-            <h2>Need something to talk about?</h2>
-            <div class="button white">
-                <%= link_to "Conversation menu", static_pages_conversations_url %>
+            <h3>Topic</h3>
+            <h2>What is the worst thing you have eaten?</h2>
+            <div class="button pink">
+                <%= link_to "See All", static_pages_conversations_url %>
             </div>
         </div>
     </div>
@@ -74,3 +93,10 @@
         </div>
     </div>
 </div>
+
+
+<% if user_signed_in? %>
+<div class="button black">
+    <%= link_to "Log out", destroy_user_session_path, :method => :delete  %>
+</div>
+<% end %>
