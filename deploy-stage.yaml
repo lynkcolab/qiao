@@ -17,7 +17,7 @@ spec:
       containers:
         - name: qiao
           imagePullPolicy: Always
-          image: AzLcWebStagek8sStageAcr.azurecr.io/qiao:#{ContainerVersion}#
+          image: AzLcWebStagek8sStageAcr.azurecr.io/lynkcolab/qiao:#{ContainerVersion}#
           ports:
             - containerPort: 80
           resources:
