@@ -12,7 +12,7 @@ class LunchesController < ApplicationController
 
     if lunches.count == 1
       @lunch = lunches[0]
-      NotifierMailer.joined_lunch(@user).deliver_now
+      #NotifierMailer.joined_lunch(@user).deliver_now
     end
 
     matches = Match.joins(:users,:lunches).where("(users.id = ?) AND (lunches.start = ?)", current_user.id, @next_lunch_start)
