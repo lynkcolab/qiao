@@ -1,0 +1,31 @@
+version: "3.4"
+services:
+  db:
+    image: postgres
+    expose:
+      - 5432
+
+  web:
+    # Build the current directory
+    build:
+      context: .
+      target: base
+
+    # Start the rails server on port 80
+    command: bundle exec rails s -e development -p 80 -b '0.0.0.0'
+
+    # Mount the current folder
+    volumes:
+      - ./:/var/app
+
+    working_dir: /var/app
+
+    # Mount a tmpfs volume for the rails tmp pids directory
+    tmpfs: /var/app/tmp/pids
+
+    # Map container port 80 to host port 3000
+    ports:
+      - 3000:80
+
+    links:
+      - db
