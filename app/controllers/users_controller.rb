@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      NotifierMailer.with(user: @user).welcome.deliver_later
       redirect_to "/"
     else
       puts @user.errors.full_messages
@@ -20,6 +21,10 @@ class UsersController < ApplicationController
 
 def show
   @user = User.find(params[:id])
+end
+
+def index
+  @users = User.all
 end
 
 

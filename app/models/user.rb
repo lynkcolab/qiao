@@ -7,4 +7,5 @@ class User < ApplicationRecord
 
   has_and_belongs_to_many :lunches, -> { distinct }
   has_and_belongs_to_many :matches, -> { distinct }
+
 end

@@ -19,6 +19,12 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 1.day, :at => ‘02:40 pm’ do
-  rake emails:next_lunch_promo
+#every 1.day, :at => ‘02:40 pm’ do
+#  rake emails:next_lunch_promo
+#end
+
+set :output, { error: 'developement.log', standard: 'development.log' }
+
+every :thursday, at: '10:00' do
+  runner "Lunch.match"
 end

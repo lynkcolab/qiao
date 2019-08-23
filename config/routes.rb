@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   get '/lunches/match', to: 'lunches#match' 
   get '/lunches/cancel_next_lunch', to: 'lunches#cancel_next_lunch' 
+
   resources :lunches
+  resources :matches
 
   get  'static_pages/conversations'
 

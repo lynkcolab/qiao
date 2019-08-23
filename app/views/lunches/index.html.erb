@@ -12,14 +12,15 @@
     </div>
 <% end %>
 
-<div class="section-heading">
-    <h1>Join Lunch</h1>
-    <p>Sign up to join the next lunch round</p>
-</div>
+
   <% if @lunch %>
+    <div class="section-heading">
+        <h1>Upcoming</h1>
+        <p>Here's the lunch you've joined</p>
+    </div>
     <div class="event">
         <div class="event-content">
-            <h3>May 2019</h3>
+            <h3><%= @next_lunch_start.strftime('%B %Y') %></h3>
             <h2><%= @next_lunch_start.strftime('%A %d') %></h2>
             <h2>at 12:00</h2>
               <div class="content">
@@ -40,23 +41,10 @@
             </div>
         </div>
     </div>
-  <% else %>
-    <div class="event">
-        <div class="event-content">
-            <h3>May 2019</h3>
-            <h2><%= Date.current.next_week(:thursday) %></h2>
-            <h2>at 12:00</h2>
-            <div class="button pink">
-                <%= link_to "Join", lunches_path, method: :post %>
-            </div>
-        </div>
+    <div class="section-heading">
+        <h1>Conversations</h1>
+        <p>Avoid an akward silence</p>
     </div>
-  <% end %>
-
-<div class="section-heading">
-    <h1>Conversations</h1>
-    <p>Avoid an akward silence</p>
-</div>
 
     <div class="event-conversations">
         <div class="event-content">
@@ -67,6 +55,22 @@
             </div>
         </div>
     </div>
+  <% else %>
+    <div class="section-heading">
+        <h1>Join Lunch</h1>
+        <p>Sign up to join the next lunch round</p>
+    </div>
+    <div class="event">
+        <div class="event-content">
+            <h3><%= Date.current.next_week(:thursday).strftime('%B %Y')  %></h3>
+            <h2><%= Date.current.next_week(:thursday).strftime('%A %d %B')  %></h2>
+            <h2>at 12:00</h2>
+            <div class="button pink">
+                <%= link_to "Join", lunches_path, method: :post %>
+            </div>
+        </div>
+    </div>
+  <% end %>
 
 <div class="section-heading">
     <h1>Previously</h1>
